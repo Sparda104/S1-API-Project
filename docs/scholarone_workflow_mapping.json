@@ -1,0 +1,1149 @@
+{
+  "endpoints": {
+    "1": {
+      "name": "Get Submission Info Basic",
+      "path": "/api/s1m/v3/submissions/basic/metadata/submissionids",
+      "version": "v3",
+      "category": "submission",
+      "required_params": [
+        "ids",
+        "site_name"
+      ],
+      "optional_params": [
+        "locale_id",
+        "_type",
+        "external_id"
+      ],
+      "response_elements": [
+        "authorFullName",
+        "authorMembershipId",
+        "authorORCIDId",
+        "authorORCIDIdValidation",
+        "authorPersonId",
+        "documentId",
+        "submissionDate",
+        "submissionId",
+        "submissionTitle",
+        "submissionType",
+        "submissionStatus",
+        "decisionName",
+        "documentStatusId"
+      ],
+      "max_ids": 25,
+      "use_cases": [
+        "Basic manuscript info",
+        "Author identification",
+        "Status checking"
+      ]
+    },
+    "2": {
+      "name": "Get Submission Info Full",
+      "path": "/api/s1m/v10/submissions/full/metadata/submissionids",
+      "version": "v10",
+      "category": "submission",
+      "required_params": [
+        "ids",
+        "site_name"
+      ],
+      "optional_params": [
+        "locale_id",
+        "_type",
+        "external_id"
+      ],
+      "response_elements": [
+        "abstractText",
+        "coverLetter",
+        "customManuscriptFlags",
+        "submissionFiles",
+        "customerFileName",
+        "docLink",
+        "fileDesignation",
+        "submissionFunders",
+        "submissionCustomQuestions",
+        "attributes",
+        "authorFullName",
+        "authorPersonId",
+        "documentId",
+        "submissionDate",
+        "submissionId",
+        "submissionTitle",
+        "submissionStatus"
+      ],
+      "max_ids": 25,
+      "use_cases": [
+        "Complete manuscript details",
+        "File access",
+        "Custom questions",
+        "Funding info"
+      ]
+    },
+    "3": {
+      "name": "Get Submission Versions",
+      "path": "/api/s1m/v2/submissions/full/revisions/submissionids",
+      "version": "v2",
+      "category": "submission",
+      "required_params": [
+        "ids",
+        "site_name"
+      ],
+      "optional_params": [
+        "locale_id",
+        "_type",
+        "external_id"
+      ],
+      "response_elements": [
+        "revisionNumber",
+        "revisionDate",
+        "documentId",
+        "submissionId",
+        "versionHistory",
+        "revisionType",
+        "previousDocumentId"
+      ],
+      "max_ids": 25,
+      "use_cases": [
+        "Version tracking",
+        "Revision history",
+        "Document evolution"
+      ]
+    },
+    "4": {
+      "name": "Get IDs By Date",
+      "path": "/api/s1m/v4/submissions/full/idsByDate",
+      "version": "v4",
+      "category": "submission",
+      "required_params": [
+        "from_time",
+        "to_time",
+        "site_name"
+      ],
+      "optional_params": [
+        "document_status",
+        "criteria",
+        "locale_id",
+        "_type",
+        "external_id"
+      ],
+      "response_elements": [
+        "datetimeCreated",
+        "documentId",
+        "documentIdLatest",
+        "documentIdOriginal",
+        "documentStatusName",
+        "submissionId",
+        "submissionIdLatest",
+        "submissionIdOriginal",
+        "submittingAuthorId",
+        "transferSubId"
+      ],
+      "max_ids": 1000,
+      "use_cases": [
+        "Date-based queries",
+        "Bulk ID retrieval",
+        "Status filtering"
+      ]
+    },
+    "5": {
+      "name": "Get Person Info Full",
+      "path": "/api/s1m/v8/person/full/personid/search",
+      "version": "v8",
+      "category": "person",
+      "required_params": [
+        "ids",
+        "site_name"
+      ],
+      "optional_params": [
+        "is_deleted",
+        "locale_id",
+        "_type",
+        "external_id"
+      ],
+      "response_elements": [
+        "accountCreatedDate",
+        "accountDeletedDate",
+        "activeFlag",
+        "firstName",
+        "lastName",
+        "personId",
+        "primaryEmailAddress",
+        "orcidId",
+        "departments",
+        "institution",
+        "designations",
+        "files",
+        "attributes",
+        "personRoles",
+        "fullAddress",
+        "fullName"
+      ],
+      "max_ids": 25,
+      "use_cases": [
+        "Author details",
+        "Institution info",
+        "Contact information"
+      ]
+    },
+    "6": {
+      "name": "Get Author Info Full",
+      "path": "/api/s1m/v3/submissions/full/contributors/authors/submissionids",
+      "version": "v3",
+      "category": "submission",
+      "required_params": [
+        "ids",
+        "site_name"
+      ],
+      "optional_params": [
+        "locale_id",
+        "_type",
+        "external_id"
+      ],
+      "response_elements": [
+        "authorFirstName",
+        "authorFullName",
+        "authorFullAddress",
+        "authorMiddleName",
+        "authorOrderNumber",
+        "authorSalutation",
+        "authorSuffix",
+        "departments",
+        "isCoAuthor",
+        "isCorresponding",
+        "isSubmittingAuthor",
+        "authorPersonId",
+        "invitedAuthorDateAssigned",
+        "invitedAuthorInvitationResponse"
+      ],
+      "max_ids": 25,
+      "use_cases": [
+        "Complete author info",
+        "Co-author relationships",
+        "Contact details"
+      ]
+    },
+    "7": {
+      "name": "Get Reviewer Info Full",
+      "path": "/api/s1m/v2/submissions/full/reviewer/submissionids",
+      "version": "v2",
+      "category": "submission",
+      "required_params": [
+        "ids",
+        "site_name"
+      ],
+      "optional_params": [
+        "locale_id",
+        "_type",
+        "external_id"
+      ],
+      "response_elements": [
+        "commentsToAuthor",
+        "commentsToEditor",
+        "departments",
+        "reviewerFullName",
+        "reviewerPersonId",
+        "numberOfDaysFromReviewAssignmentToCompletion",
+        "reviewerAssignmentStatus",
+        "reviewerDateAssigned",
+        "reviewerDateInvited",
+        "reviewerInvitationResponse",
+        "reviewerRecommendation",
+        "scoreSheetCompletedDate",
+        "scoreSheetCustomQuestions",
+        "reviewerRatingCustomQuestions"
+      ],
+      "max_ids": 25,
+      "use_cases": [
+        "Review process tracking",
+        "Reviewer performance",
+        "Review content"
+      ]
+    },
+    "8": {
+      "name": "Get Review Files Full",
+      "path": "/api/s1m/v4/submissions/full/review_files/submissionids",
+      "version": "v4",
+      "category": "submission",
+      "required_params": [
+        "ids",
+        "site_name"
+      ],
+      "optional_params": [
+        "locale_id",
+        "_type",
+        "external_id"
+      ],
+      "response_elements": [
+        "signedFilesInfo",
+        "displayName",
+        "docLink",
+        "fileType",
+        "fileSize",
+        "uploadDate",
+        "fileDesignation"
+      ],
+      "max_ids": 25,
+      "use_cases": [
+        "File access",
+        "Document downloads",
+        "Review materials"
+      ]
+    },
+    "9": {
+      "name": "Get Decision Correspondence",
+      "path": "/api/s1m/v5/submissions/full/decisioncorrespondence/submissionids",
+      "version": "v5",
+      "category": "submission",
+      "required_params": [
+        "ids",
+        "site_name"
+      ],
+      "optional_params": [
+        "locale_id",
+        "_type",
+        "external_id"
+      ],
+      "response_elements": [
+        "decisionBody",
+        "decisionCc",
+        "decisionBcc",
+        "decisionFrom",
+        "decisionSentDate",
+        "decisionSubject",
+        "decisionTo",
+        "responseToDecision",
+        "responseToDecisionFiles",
+        "decisionType",
+        "decisionLetter"
+      ],
+      "max_ids": 25,
+      "use_cases": [
+        "Decision tracking",
+        "Correspondence history",
+        "Communication audit"
+      ]
+    },
+    "10": {
+      "name": "Get Editor Assignments By Date",
+      "path": "/api/s1m/v2/submissions/full/editorAssignmentsByDate",
+      "version": "v2",
+      "category": "submission",
+      "required_params": [
+        "from_time",
+        "to_time",
+        "site_name"
+      ],
+      "optional_params": [
+        "role_type",
+        "custom_question",
+        "locale_id",
+        "_type",
+        "external_id"
+      ],
+      "response_elements": [
+        "assignedCount",
+        "personId",
+        "roleName",
+        "roleType",
+        "editorFullName",
+        "customQuestions",
+        "assignmentDate",
+        "assignmentStatus"
+      ],
+      "max_ids": 1000,
+      "use_cases": [
+        "Editor workload",
+        "Assignment tracking",
+        "Editorial metrics"
+      ]
+    },
+    "11": {
+      "name": "Get Metadata Info",
+      "path": "/api/s1m/v3/submissions/full/metadatainfo/documentids",
+      "version": "v3",
+      "category": "submission",
+      "required_params": [
+        "ids",
+        "site_name"
+      ],
+      "optional_params": [
+        "locale_id",
+        "_type",
+        "external_id"
+      ],
+      "response_elements": [
+        "authorChoiceTransferOptions",
+        "authorFullName",
+        "country",
+        "datetimeDecisionOriginal",
+        "datetimeSubmitted",
+        "decisionTypeOriginal",
+        "documentTasks",
+        "editorFullName",
+        "institutionName",
+        "managingEditorFullName",
+        "manuscriptStatus",
+        "numberResubmissions",
+        "numberRevisions",
+        "reviewerCount",
+        "timeInReview",
+        "submissionWorkflowStatus"
+      ],
+      "max_ids": 25,
+      "use_cases": [
+        "Complete metadata",
+        "Workflow tracking",
+        "Performance metrics"
+      ]
+    }
+  },
+  "parameters": {
+    "ids": {
+      "required_by": [
+        "1: Get Submission Info Basic",
+        "2: Get Submission Info Full",
+        "3: Get Submission Versions",
+        "5: Get Person Info Full",
+        "6: Get Author Info Full",
+        "7: Get Reviewer Info Full",
+        "8: Get Review Files Full",
+        "9: Get Decision Correspondence",
+        "11: Get Metadata Info"
+      ],
+      "optional_for": []
+    },
+    "site_name": {
+      "required_by": [
+        "1: Get Submission Info Basic",
+        "2: Get Submission Info Full",
+        "3: Get Submission Versions",
+        "4: Get IDs By Date",
+        "5: Get Person Info Full",
+        "6: Get Author Info Full",
+        "7: Get Reviewer Info Full",
+        "8: Get Review Files Full",
+        "9: Get Decision Correspondence",
+        "10: Get Editor Assignments By Date",
+        "11: Get Metadata Info"
+      ],
+      "optional_for": []
+    },
+    "locale_id": {
+      "required_by": [],
+      "optional_for": [
+        "1: Get Submission Info Basic",
+        "2: Get Submission Info Full",
+        "3: Get Submission Versions",
+        "4: Get IDs By Date",
+        "5: Get Person Info Full",
+        "6: Get Author Info Full",
+        "7: Get Reviewer Info Full",
+        "8: Get Review Files Full",
+        "9: Get Decision Correspondence",
+        "10: Get Editor Assignments By Date",
+        "11: Get Metadata Info"
+      ]
+    },
+    "_type": {
+      "required_by": [],
+      "optional_for": [
+        "1: Get Submission Info Basic",
+        "2: Get Submission Info Full",
+        "3: Get Submission Versions",
+        "4: Get IDs By Date",
+        "5: Get Person Info Full",
+        "6: Get Author Info Full",
+        "7: Get Reviewer Info Full",
+        "8: Get Review Files Full",
+        "9: Get Decision Correspondence",
+        "10: Get Editor Assignments By Date",
+        "11: Get Metadata Info"
+      ]
+    },
+    "external_id": {
+      "required_by": [],
+      "optional_for": [
+        "1: Get Submission Info Basic",
+        "2: Get Submission Info Full",
+        "3: Get Submission Versions",
+        "4: Get IDs By Date",
+        "5: Get Person Info Full",
+        "6: Get Author Info Full",
+        "7: Get Reviewer Info Full",
+        "8: Get Review Files Full",
+        "9: Get Decision Correspondence",
+        "10: Get Editor Assignments By Date",
+        "11: Get Metadata Info"
+      ]
+    },
+    "from_time": {
+      "required_by": [
+        "4: Get IDs By Date",
+        "10: Get Editor Assignments By Date"
+      ],
+      "optional_for": []
+    },
+    "to_time": {
+      "required_by": [
+        "4: Get IDs By Date",
+        "10: Get Editor Assignments By Date"
+      ],
+      "optional_for": []
+    },
+    "document_status": {
+      "required_by": [],
+      "optional_for": [
+        "4: Get IDs By Date"
+      ]
+    },
+    "criteria": {
+      "required_by": [],
+      "optional_for": [
+        "4: Get IDs By Date"
+      ]
+    },
+    "is_deleted": {
+      "required_by": [],
+      "optional_for": [
+        "5: Get Person Info Full"
+      ]
+    },
+    "role_type": {
+      "required_by": [],
+      "optional_for": [
+        "10: Get Editor Assignments By Date"
+      ]
+    },
+    "custom_question": {
+      "required_by": [],
+      "optional_for": [
+        "10: Get Editor Assignments By Date"
+      ]
+    }
+  },
+  "response_elements": {
+    "authorFullName": [
+      "1: Get Submission Info Basic",
+      "2: Get Submission Info Full",
+      "6: Get Author Info Full",
+      "11: Get Metadata Info"
+    ],
+    "authorMembershipId": [
+      "1: Get Submission Info Basic"
+    ],
+    "authorORCIDId": [
+      "1: Get Submission Info Basic"
+    ],
+    "authorORCIDIdValidation": [
+      "1: Get Submission Info Basic"
+    ],
+    "authorPersonId": [
+      "1: Get Submission Info Basic",
+      "2: Get Submission Info Full",
+      "6: Get Author Info Full"
+    ],
+    "documentId": [
+      "1: Get Submission Info Basic",
+      "2: Get Submission Info Full",
+      "3: Get Submission Versions",
+      "4: Get IDs By Date"
+    ],
+    "submissionDate": [
+      "1: Get Submission Info Basic",
+      "2: Get Submission Info Full"
+    ],
+    "submissionId": [
+      "1: Get Submission Info Basic",
+      "2: Get Submission Info Full",
+      "3: Get Submission Versions",
+      "4: Get IDs By Date"
+    ],
+    "submissionTitle": [
+      "1: Get Submission Info Basic",
+      "2: Get Submission Info Full"
+    ],
+    "submissionType": [
+      "1: Get Submission Info Basic"
+    ],
+    "submissionStatus": [
+      "1: Get Submission Info Basic",
+      "2: Get Submission Info Full"
+    ],
+    "decisionName": [
+      "1: Get Submission Info Basic"
+    ],
+    "documentStatusId": [
+      "1: Get Submission Info Basic"
+    ],
+    "abstractText": [
+      "2: Get Submission Info Full"
+    ],
+    "coverLetter": [
+      "2: Get Submission Info Full"
+    ],
+    "customManuscriptFlags": [
+      "2: Get Submission Info Full"
+    ],
+    "submissionFiles": [
+      "2: Get Submission Info Full"
+    ],
+    "customerFileName": [
+      "2: Get Submission Info Full"
+    ],
+    "docLink": [
+      "2: Get Submission Info Full",
+      "8: Get Review Files Full"
+    ],
+    "fileDesignation": [
+      "2: Get Submission Info Full",
+      "8: Get Review Files Full"
+    ],
+    "submissionFunders": [
+      "2: Get Submission Info Full"
+    ],
+    "submissionCustomQuestions": [
+      "2: Get Submission Info Full"
+    ],
+    "attributes": [
+      "2: Get Submission Info Full",
+      "5: Get Person Info Full"
+    ],
+    "revisionNumber": [
+      "3: Get Submission Versions"
+    ],
+    "revisionDate": [
+      "3: Get Submission Versions"
+    ],
+    "versionHistory": [
+      "3: Get Submission Versions"
+    ],
+    "revisionType": [
+      "3: Get Submission Versions"
+    ],
+    "previousDocumentId": [
+      "3: Get Submission Versions"
+    ],
+    "datetimeCreated": [
+      "4: Get IDs By Date"
+    ],
+    "documentIdLatest": [
+      "4: Get IDs By Date"
+    ],
+    "documentIdOriginal": [
+      "4: Get IDs By Date"
+    ],
+    "documentStatusName": [
+      "4: Get IDs By Date"
+    ],
+    "submissionIdLatest": [
+      "4: Get IDs By Date"
+    ],
+    "submissionIdOriginal": [
+      "4: Get IDs By Date"
+    ],
+    "submittingAuthorId": [
+      "4: Get IDs By Date"
+    ],
+    "transferSubId": [
+      "4: Get IDs By Date"
+    ],
+    "accountCreatedDate": [
+      "5: Get Person Info Full"
+    ],
+    "accountDeletedDate": [
+      "5: Get Person Info Full"
+    ],
+    "activeFlag": [
+      "5: Get Person Info Full"
+    ],
+    "firstName": [
+      "5: Get Person Info Full"
+    ],
+    "lastName": [
+      "5: Get Person Info Full"
+    ],
+    "personId": [
+      "5: Get Person Info Full",
+      "10: Get Editor Assignments By Date"
+    ],
+    "primaryEmailAddress": [
+      "5: Get Person Info Full"
+    ],
+    "orcidId": [
+      "5: Get Person Info Full"
+    ],
+    "departments": [
+      "5: Get Person Info Full",
+      "6: Get Author Info Full",
+      "7: Get Reviewer Info Full"
+    ],
+    "institution": [
+      "5: Get Person Info Full"
+    ],
+    "designations": [
+      "5: Get Person Info Full"
+    ],
+    "files": [
+      "5: Get Person Info Full"
+    ],
+    "personRoles": [
+      "5: Get Person Info Full"
+    ],
+    "fullAddress": [
+      "5: Get Person Info Full"
+    ],
+    "fullName": [
+      "5: Get Person Info Full"
+    ],
+    "authorFirstName": [
+      "6: Get Author Info Full"
+    ],
+    "authorFullAddress": [
+      "6: Get Author Info Full"
+    ],
+    "authorMiddleName": [
+      "6: Get Author Info Full"
+    ],
+    "authorOrderNumber": [
+      "6: Get Author Info Full"
+    ],
+    "authorSalutation": [
+      "6: Get Author Info Full"
+    ],
+    "authorSuffix": [
+      "6: Get Author Info Full"
+    ],
+    "isCoAuthor": [
+      "6: Get Author Info Full"
+    ],
+    "isCorresponding": [
+      "6: Get Author Info Full"
+    ],
+    "isSubmittingAuthor": [
+      "6: Get Author Info Full"
+    ],
+    "invitedAuthorDateAssigned": [
+      "6: Get Author Info Full"
+    ],
+    "invitedAuthorInvitationResponse": [
+      "6: Get Author Info Full"
+    ],
+    "commentsToAuthor": [
+      "7: Get Reviewer Info Full"
+    ],
+    "commentsToEditor": [
+      "7: Get Reviewer Info Full"
+    ],
+    "reviewerFullName": [
+      "7: Get Reviewer Info Full"
+    ],
+    "reviewerPersonId": [
+      "7: Get Reviewer Info Full"
+    ],
+    "numberOfDaysFromReviewAssignmentToCompletion": [
+      "7: Get Reviewer Info Full"
+    ],
+    "reviewerAssignmentStatus": [
+      "7: Get Reviewer Info Full"
+    ],
+    "reviewerDateAssigned": [
+      "7: Get Reviewer Info Full"
+    ],
+    "reviewerDateInvited": [
+      "7: Get Reviewer Info Full"
+    ],
+    "reviewerInvitationResponse": [
+      "7: Get Reviewer Info Full"
+    ],
+    "reviewerRecommendation": [
+      "7: Get Reviewer Info Full"
+    ],
+    "scoreSheetCompletedDate": [
+      "7: Get Reviewer Info Full"
+    ],
+    "scoreSheetCustomQuestions": [
+      "7: Get Reviewer Info Full"
+    ],
+    "reviewerRatingCustomQuestions": [
+      "7: Get Reviewer Info Full"
+    ],
+    "signedFilesInfo": [
+      "8: Get Review Files Full"
+    ],
+    "displayName": [
+      "8: Get Review Files Full"
+    ],
+    "fileType": [
+      "8: Get Review Files Full"
+    ],
+    "fileSize": [
+      "8: Get Review Files Full"
+    ],
+    "uploadDate": [
+      "8: Get Review Files Full"
+    ],
+    "decisionBody": [
+      "9: Get Decision Correspondence"
+    ],
+    "decisionCc": [
+      "9: Get Decision Correspondence"
+    ],
+    "decisionBcc": [
+      "9: Get Decision Correspondence"
+    ],
+    "decisionFrom": [
+      "9: Get Decision Correspondence"
+    ],
+    "decisionSentDate": [
+      "9: Get Decision Correspondence"
+    ],
+    "decisionSubject": [
+      "9: Get Decision Correspondence"
+    ],
+    "decisionTo": [
+      "9: Get Decision Correspondence"
+    ],
+    "responseToDecision": [
+      "9: Get Decision Correspondence"
+    ],
+    "responseToDecisionFiles": [
+      "9: Get Decision Correspondence"
+    ],
+    "decisionType": [
+      "9: Get Decision Correspondence"
+    ],
+    "decisionLetter": [
+      "9: Get Decision Correspondence"
+    ],
+    "assignedCount": [
+      "10: Get Editor Assignments By Date"
+    ],
+    "roleName": [
+      "10: Get Editor Assignments By Date"
+    ],
+    "roleType": [
+      "10: Get Editor Assignments By Date"
+    ],
+    "editorFullName": [
+      "10: Get Editor Assignments By Date",
+      "11: Get Metadata Info"
+    ],
+    "customQuestions": [
+      "10: Get Editor Assignments By Date"
+    ],
+    "assignmentDate": [
+      "10: Get Editor Assignments By Date"
+    ],
+    "assignmentStatus": [
+      "10: Get Editor Assignments By Date"
+    ],
+    "authorChoiceTransferOptions": [
+      "11: Get Metadata Info"
+    ],
+    "country": [
+      "11: Get Metadata Info"
+    ],
+    "datetimeDecisionOriginal": [
+      "11: Get Metadata Info"
+    ],
+    "datetimeSubmitted": [
+      "11: Get Metadata Info"
+    ],
+    "decisionTypeOriginal": [
+      "11: Get Metadata Info"
+    ],
+    "documentTasks": [
+      "11: Get Metadata Info"
+    ],
+    "institutionName": [
+      "11: Get Metadata Info"
+    ],
+    "managingEditorFullName": [
+      "11: Get Metadata Info"
+    ],
+    "manuscriptStatus": [
+      "11: Get Metadata Info"
+    ],
+    "numberResubmissions": [
+      "11: Get Metadata Info"
+    ],
+    "numberRevisions": [
+      "11: Get Metadata Info"
+    ],
+    "reviewerCount": [
+      "11: Get Metadata Info"
+    ],
+    "timeInReview": [
+      "11: Get Metadata Info"
+    ],
+    "submissionWorkflowStatus": [
+      "11: Get Metadata Info"
+    ]
+  },
+  "workflows": {
+    "basic_submission_report": {
+      "description": "Basic manuscript information with authors",
+      "required_columns": [
+        "Journal Name",
+        "Submission ID",
+        "Title",
+        "Status",
+        "Author Name",
+        "Submission Date"
+      ],
+      "workflow_steps": [
+        {
+          "step": 1,
+          "endpoint": "4",
+          "name": "Get IDs By Date",
+          "purpose": "Get list of submissions in date range",
+          "params": [
+            "from_time",
+            "to_time",
+            "site_name"
+          ],
+          "provides": [
+            "submissionId",
+            "documentId",
+            "documentStatusName",
+            "datetimeCreated",
+            "submittingAuthorId"
+          ]
+        },
+        {
+          "step": 2,
+          "endpoint": "1",
+          "name": "Get Submission Info Basic",
+          "purpose": "Get submission titles and basic info",
+          "params": [
+            "ids",
+            "site_name"
+          ],
+          "input_from_step": 1,
+          "input_field": "submissionId",
+          "provides": [
+            "submissionTitle",
+            "submissionStatus",
+            "authorFullName",
+            "submissionDate"
+          ]
+        }
+      ],
+      "field_mappings": {
+        "Journal Name": "static:Organization Science",
+        "Submission ID": "step1:submissionId",
+        "Title": "step2:submissionTitle",
+        "Status": "step1:documentStatusName",
+        "Author Name": "step2:authorFullName",
+        "Submission Date": "step2:submissionDate"
+      }
+    },
+    "comprehensive_submission_report": {
+      "description": "Complete manuscript details with authors and reviewers",
+      "required_columns": [
+        "Journal Name",
+        "Submission ID",
+        "Title",
+        "Status",
+        "Author Name",
+        "Reviewer Name",
+        "Decision Date",
+        "Abstract"
+      ],
+      "workflow_steps": [
+        {
+          "step": 1,
+          "endpoint": "4",
+          "name": "Get IDs By Date",
+          "purpose": "Get list of submissions in date range",
+          "params": [
+            "from_time",
+            "to_time",
+            "site_name"
+          ],
+          "provides": [
+            "submissionId",
+            "documentId",
+            "documentStatusName"
+          ]
+        },
+        {
+          "step": 2,
+          "endpoint": "2",
+          "name": "Get Submission Info Full",
+          "purpose": "Get complete submission details",
+          "params": [
+            "ids",
+            "site_name"
+          ],
+          "input_from_step": 1,
+          "input_field": "submissionId",
+          "provides": [
+            "submissionTitle",
+            "abstractText",
+            "authorFullName"
+          ]
+        },
+        {
+          "step": 3,
+          "endpoint": "7",
+          "name": "Get Reviewer Info Full",
+          "purpose": "Get reviewer information",
+          "params": [
+            "ids",
+            "site_name"
+          ],
+          "input_from_step": 1,
+          "input_field": "submissionId",
+          "provides": [
+            "reviewerFullName",
+            "scoreSheetCompletedDate"
+          ]
+        },
+        {
+          "step": 4,
+          "endpoint": "9",
+          "name": "Get Decision Correspondence",
+          "purpose": "Get decision dates",
+          "params": [
+            "ids",
+            "site_name"
+          ],
+          "input_from_step": 1,
+          "input_field": "submissionId",
+          "provides": [
+            "decisionSentDate"
+          ]
+        }
+      ],
+      "field_mappings": {
+        "Journal Name": "static:Organization Science",
+        "Submission ID": "step1:submissionId",
+        "Title": "step2:submissionTitle",
+        "Status": "step1:documentStatusName",
+        "Author Name": "step2:authorFullName",
+        "Reviewer Name": "step3:reviewerFullName",
+        "Decision Date": "step4:decisionSentDate",
+        "Abstract": "step2:abstractText"
+      }
+    },
+    "reviewer_performance_report": {
+      "description": "Reviewer activity and performance metrics",
+      "required_columns": [
+        "Reviewer Name",
+        "Submission Count",
+        "Average Review Time",
+        "Recommendation Types",
+        "Institution"
+      ],
+      "workflow_steps": [
+        {
+          "step": 1,
+          "endpoint": "4",
+          "name": "Get IDs By Date",
+          "purpose": "Get submissions in date range",
+          "params": [
+            "from_time",
+            "to_time",
+            "site_name"
+          ],
+          "provides": [
+            "submissionId"
+          ]
+        },
+        {
+          "step": 2,
+          "endpoint": "7",
+          "name": "Get Reviewer Info Full",
+          "purpose": "Get reviewer details and performance",
+          "params": [
+            "ids",
+            "site_name"
+          ],
+          "input_from_step": 1,
+          "input_field": "submissionId",
+          "provides": [
+            "reviewerFullName",
+            "numberOfDaysFromReviewAssignmentToCompletion",
+            "reviewerRecommendation",
+            "departments"
+          ]
+        }
+      ],
+      "field_mappings": {
+        "Reviewer Name": "step2:reviewerFullName",
+        "Submission Count": "aggregated:count",
+        "Average Review Time": "step2:numberOfDaysFromReviewAssignmentToCompletion",
+        "Recommendation Types": "step2:reviewerRecommendation",
+        "Institution": "step2:departments"
+      }
+    },
+    "editorial_workload_report": {
+      "description": "Editor assignments and workload analysis",
+      "required_columns": [
+        "Editor Name",
+        "Role",
+        "Assigned Count",
+        "Assignment Period"
+      ],
+      "workflow_steps": [
+        {
+          "step": 1,
+          "endpoint": "10",
+          "name": "Get Editor Assignments By Date",
+          "purpose": "Get editor assignments in period",
+          "params": [
+            "from_time",
+            "to_time",
+            "site_name"
+          ],
+          "provides": [
+            "editorFullName",
+            "roleName",
+            "assignedCount",
+            "assignmentDate"
+          ]
+        }
+      ],
+      "field_mappings": {
+        "Editor Name": "step1:editorFullName",
+        "Role": "step1:roleName",
+        "Assigned Count": "step1:assignedCount",
+        "Assignment Period": "step1:assignmentDate"
+      }
+    }
+  },
+  "implementation_notes": {
+    "batch_sizes": {
+      "ids_parameter": 25,
+      "date_range_results": 1000,
+      "optimal_batch_size": 10
+    },
+    "required_transformations": {
+      "date_formats": {
+        "input": "MM/DD/YYYY or YYYY-MM-DD",
+        "output": "YYYY-MM-DDTHH:MM:SSZ",
+        "function": "iso8601_date()"
+      },
+      "id_formatting": {
+        "input": "comma-separated string",
+        "output": "'ID1','ID2','ID3'",
+        "function": "quote_and_join()"
+      }
+    },
+    "error_handling": {
+      "api_errors": [
+        "400",
+        "401",
+        "403",
+        "404",
+        "500"
+      ],
+      "recovery_strategies": {
+        "400": "Check parameter formatting",
+        "401": "Re-authenticate",
+        "403": "Check permissions",
+        "404": "Verify endpoint path",
+        "500": "Retry with backoff"
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+api_base_url: https://mc-api.manuscriptcentral.com
+sites:
+  - deca
+  - isr
+  - inte
+  - ijoc
+  - ijds
+  - ijoo
+  - ite
+  - ms
+  - msom
+  - msomconference
+  - mksc
+  - mathor
+  - opre
+  - serv
+  - stratsci
+  - ssy
+  - orgsci
+  - transci
